@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_listProductFragment_to_addProductFragment"
             app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_listProductFragment_to_listCategoryProductFragment"
+            app:destination="@id/listCategoryProductFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
@@ -26,4 +29,17 @@
         android:id="@+id/addProductFragment"
         android:name="com.ericampire.android.cartmanager.view.fragment.AddProductFragment"
         android:label="AddProductFragment" />
+    <fragment
+        android:id="@+id/listCategoryProductFragment"
+        android:name="com.ericampire.android.cartmanager.view.fragment.ListCategoryProductFragment"
+        android:label="list_category_product_fragment"
+        tools:layout="@layout/list_category_product_fragment" >
+        <action
+            android:id="@+id/action_listCategoryProductFragment_to_addCategroyProductFragment"
+            app:destination="@id/addCategroyProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCategroyProductFragment"
+        android:name="com.ericampire.android.cartmanager.view.fragment.AddCategroyProductFragment"
+        android:label="AddCategroyProductFragment" />
 </navigation>

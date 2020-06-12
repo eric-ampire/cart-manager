@@ -41,6 +41,11 @@ class ListProductFragment : Fragment(), ProductCartListener {
             it.findNavController().navigate(action)
         }
 
+        view.btnCategory.setOnClickListener {
+            val action = R.id.action_listProductFragment_to_listCategoryProductFragment
+            it.findNavController().navigate(action)
+        }
+
         setupRecyclerViewAdapter(view)
     }
 

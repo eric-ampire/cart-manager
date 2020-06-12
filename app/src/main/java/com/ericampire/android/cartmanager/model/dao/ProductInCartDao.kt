@@ -3,6 +3,7 @@ package com.ericampire.android.cartmanager.model.dao
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
+import com.ericampire.android.cartmanager.model.entity.CategoryProductInCart
 import com.ericampire.android.cartmanager.model.entity.ProductInCart
 import kotlinx.coroutines.flow.Flow
 
@@ -12,4 +13,8 @@ interface ProductInCartDao {
     @Transaction
     @Query("SELECT * FROM Product")
     fun getAllProductInCart(): Flow<List<ProductInCart>>
+
+    @Transaction
+    @Query("SELECT * FROM CategoryProduct")
+    fun getAllCategoryProductInCart(): Flow<List<CategoryProductInCart>>
 }

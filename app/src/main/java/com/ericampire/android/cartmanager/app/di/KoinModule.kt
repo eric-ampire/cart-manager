@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.ericampire.android.cartmanager.app.App
 import com.ericampire.android.cartmanager.model.AppDatabase
 import com.ericampire.android.cartmanager.model.dao.CartItemDao
+import com.ericampire.android.cartmanager.model.dao.CategoryProductDao
 import com.ericampire.android.cartmanager.model.dao.ProductDao
 import com.ericampire.android.cartmanager.model.dao.ProductInCartDao
 import com.ericampire.android.cartmanager.viewmodel.ProductViewModel
@@ -22,6 +23,10 @@ val databaseModule = module {
         return appDatabase.productDao
     }
 
+    fun provideCategoryProductDao(appDatabase: AppDatabase): CategoryProductDao {
+        return appDatabase.categoryProductDao
+    }
+
     fun provideProductInCartDao(appDatabase: AppDatabase): ProductInCartDao {
         return appDatabase.productInCartDao
     }
@@ -31,6 +36,7 @@ val databaseModule = module {
     }
 
     single { provideProductDao(get()) }
+    single { provideCategoryProductDao(get()) }
     single { provideProductInCartDao(get()) }
     single { provideCartItemDao(get()) }
     single { provideRoomDatabase(androidApplication()) }
